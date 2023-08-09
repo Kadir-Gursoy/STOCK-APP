@@ -6,14 +6,18 @@ import { useDispatch } from "react-redux"
 export const login = async(userData) => {
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 const BASE_URL ="http://10001.fullstack.clarusway.com"
+
+dispatch(fetchStart())
 
     try {
         await axios.post(`{BASE_URL}//account/auth/login/`, userData)
+        dispatch(loginSucces(data))
         toastSuccessNotify("login başaralı")
         navigate("/")
     } catch (error) {
-       
+       dispatch(fetchFail())
         
     }
 
