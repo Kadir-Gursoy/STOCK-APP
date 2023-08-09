@@ -67,10 +67,13 @@ const loginSchema = object({
               action.resetForm()
               action.setSubmiting(false)
             }}
+            
           >
-          {()=>(   <Box
-            component="form"
-            sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+          {({handleChange, handleBlur, values, touched, errors})=>(   
+          <Form>
+          <Box
+          component="form"
+          sx={{ display: "flex", flexDirection: "column", gap: 2 }}
           >
             <TextField
               label="Email"
@@ -78,23 +81,24 @@ const loginSchema = object({
               id="email"
               type="email"
               variant="outlined"
-              helperText={touched.email ++ errors.email}
+              helperText={touched.email && errors.email}
               error={touched.email && Boolean(errors.email)}
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
-            />
+              />
             <TextField
               label="password"
               name="password"
               id="password"
               type="password"
               variant="outlined"
-            />
+              />
             <Button variant="contained" type="submit">
               Submit
             </Button>
           </Box>
+          </Form>
 )}    
             </Formik>    
 
