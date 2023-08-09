@@ -8,13 +8,20 @@ import { Link, useNavigate } from "react-router-dom"
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
 import { Button } from "@mui/material"
-
+  import { object, string} from 'yup';
+  import Formik from 'Formik';
 
 const Login = () => {
   const navigate = useNavigate()
   
   //!harici validayon şeeması
-  const loginSchema = {}
+
+
+const loginSchema = object({
+ 
+  email: string().email(),
+  password:string().required()
+});
 
 
 
@@ -71,6 +78,11 @@ const Login = () => {
               id="email"
               type="email"
               variant="outlined"
+              helperText={touched.email ++ errors.email}
+              error={touched.email && Boolean(errors.email)}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.email}
             />
             <TextField
               label="password"
