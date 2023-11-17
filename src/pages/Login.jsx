@@ -56,8 +56,8 @@ const loginSchema = object({
           <Typography
             variant="h4"
             align="center"
-            mb={4}
-            color="secondary.light"
+            mb={5}
+            color="secondary.dark"
           >
           <Formik initialValues={{}} 
             validationSchema={loginSchema}
