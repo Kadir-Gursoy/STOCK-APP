@@ -47,14 +47,14 @@ const loginSchema = object({
             sx={{
               backgroundColor: "secondary.light",
               m: "auto",
-              width: 40,
-              height: 40,
+              width: 45,
+              height: 45,
             }}
           >
-            <LockIcon size="30" />
+            <LockIcon size="33" />
           </Avatar>
           <Typography
-            variant="h4"
+            variant="h3"
             align="center"
             mb={5}
             color="secondary.dark"
