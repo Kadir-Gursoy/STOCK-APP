@@ -73,7 +73,7 @@ const loginSchema = object({
           <Form>
           <Box
           component="form"
-          sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+          sx={{ display: "flex", flexDirection: "column", gap: 3 }}
           >
             <TextField
               label="Email"
@@ -106,7 +106,7 @@ const loginSchema = object({
           </Typography>
 
        
-          <Box sx={{ textAlign: "center", mt: 2 }}>
+          <Box sx={{ textAlign: "center", mt: 3 }}>
             <Link to="/register">Do you have not an account?</Link>
           </Box>
         </Grid>
